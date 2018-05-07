@@ -21,96 +21,19 @@
 
         <div class="row">
             <div class="col-md-6">
-                <div id="albumPic"></div>
+                <div id="songtitle">
+                </div>
+                <div id="image">
+                </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 rightblock">
                 <div>Press any key to get started!</div>
                 <p id="userWins">Wins: 0</p>
                 <p id="word"></p>
                 <p id="guessCounter">Guesses Left: 15</p>
                 <p id="userGuess">Letters Guessed: </p>
             </div>
-
         </div>
-
-
-<script>
-var wins = 0;
-var wordBank = ["logic", "marshmello", "zedd", "wizkhalifa", "eminem"];
-var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-var guessRemaining = 15;
-var lettersGuessed = [];
-var lettersBlank = [];
-var userChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
-        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-for(i = 0; i < currentWord.length; i++) {
-    lettersBlank.push("_ ");
-    $("#word").text(lettersBlank.join(''));
-}
-
-$(document).ready(function() {
-    document.onkeyup = function(event) {
-
-    function reset() {
-    wins = 0;
-    wordBank = ["logic", "marshmello", "zedd", "wizkhalifa", "eminem"];
-    currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-    guessRemaining = 15;
-    lettersGuessed = [];
-    lettersBlank = [];
-    userChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
-        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-}
-
-        var userGuess = event.key;
-        lettersGuessed.push(userGuess);
-
-        if(userGuess === currentWord) {
-            wins++;
-        }
-// activate Function Reset() if guess remaining reaches 0
-        if(guessRemaining === 0) {
-            reset();
-        }
-// currentWord is "logic"
-        if(currentWord === wordBank[0] && userGuess === "l") {
-            // var z = lettersBlank.valueOf(0);
-            // z = "l" + lettersBlank.join('');
-            // $("#word").text(z);
-            lettersBlank.splice(0, 1, "l");
-            $("#word").text(lettersBlank.join(''));
-        }
-        else if(currentWord === wordBank[0] && userGuess === "o") {
-            lettersBlank.splice(1, 1, "o");
-            $("#word").text(lettersBlank.join(''));
-        }
-        else if(currentWord === wordBank[0] && userGuess === "g") {
-            lettersBlank.splice(2, 1, "g");
-            $("#word").text(lettersBlank.join(''));
-        }
-        else if(currentWord === wordBank[0] && userGuess === "i") {
-            lettersBlank.splice(3, 1, "i");
-            $("#word").text(lettersBlank.join(''));
-        }
-        else if(currentWord === wordBank[0] && userGuess === "c") {
-            lettersBlank.splice(4, 1, "c");
-            $("#word").text(lettersBlank.join(''));
-        }
-        else {
-            guessRemaining--;
-        }
-
-        console.log(currentWord);
-
-        $("#guessCounter").text("Guesses Left: " + guessRemaining);
-        $("#userWins").text("Wins: " + wins);
-        $("#userGuess").append(userGuess + ", ");
-    }
-});
-</script>
-
-
 </body>
 </html>
