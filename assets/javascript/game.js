@@ -11,7 +11,7 @@ var guessRemaining = 15;
 var lettersGuessed = [];
 var lettersBlank = [];
 var userChoices = ["A", "B", "B", "D", "E", "F", "G", "H", "I", "J", "K", 
-        "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 function wordFlip() {
     for (i = 0; i < currentWord.length; i++) {
@@ -27,8 +27,8 @@ function reset() {
     guessRemaining = 15;
     lettersGuessed.length = 0;
     lettersBlank.length = 0;
-    userChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
-            "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    userChoices = ["A", "B", "B", "D", "E", "F", "G", "H", "I", "J", "K", 
+        "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     $("#word").text(lettersBlank);
     wordFlip();
 }
